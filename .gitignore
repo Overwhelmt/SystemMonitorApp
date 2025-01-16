@@ -11,3 +11,5 @@ test_results/
 
 *.db
 *.sqlite3
+
+__pycache__
