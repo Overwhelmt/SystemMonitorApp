@@ -114,7 +114,7 @@ class SystemMonitorApp:
             self.minutes, self.seconds = divmod(self.elapsed_time, 60)
             self.timer_label.config(
                 text='{:02}:{:02}'.format(int(self.minutes), int(self.seconds)))
-            self.frame.after(self.tick_interval, self.update_timer)
+            self.frame.after(1000, self.update_timer)
 
     @staticmethod
     def get_cpu_usage():

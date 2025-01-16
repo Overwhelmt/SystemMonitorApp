@@ -4,7 +4,8 @@
 SystemMonitiringApp – это приложение, позволяющее отслеживать
 показатели ЦПУ ОЗУ и ПЗУ ПК и записывать данные в бд по мере их обновления
 
-## Установка
+
+## Установка на Windows
 1. Клонируйте репозиторий:
   ```bash
    git clone https://github.com/Overwhelmt/SystemMonitorApp.git
@@ -13,7 +14,31 @@ SystemMonitiringApp – это приложение, позволяющее от
    ```bash
    cd SystemMonitiringApp
    ```
-3. Установите зависимости:
+3. cоздайте и активируйте вирутальное окружение:
+   ```bash
+   python -m venv venv
+   source venv/Scripts/Activate
+   ```
+4. Установите зависимости:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Установка на Linux
+1. Клонируйте репозиторий:
+  ```bash
+   git clone https://github.com/Overwhelmt/SystemMonitorApp.git
+   ```
+2. Перейдите в директорию проекта:
+   ```bash
+   cd SystemMonitiringApp
+   ```
+3. cоздайте и активируйте вирутальное окружение:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+4. Установите зависимости:
    ```bash
    pip install -r requirements.txt
    ```
