@@ -39,18 +39,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Set up Xvfb (Ubuntu only)
+      # Установка tkinter и Xvfb для Ubuntu
+      - name: Install tkinter and Xvfb (Ubuntu only)
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb
+          sudo apt-get install -y python3-tk xvfb
 
-      - name: Run Xvfb (Ubuntu only)
+      # Запуск тестов с использованием xvfb-run
+      - name: Run tests with xvfb-run (Ubuntu only)
         if: matrix.os == 'ubuntu-latest'
         run: |
-          Xvfb :99 -screen 0 1024x768x24 &
-          export DISPLAY=:99
+          xvfb-run --auto-servernum --server-args='-screen 0 1024x768x24' pytest tests/
 
-      - name: Run tests
+      # Запуск тестов для Windows и macOS
+      - name: Run tests (Windows and macOS)
+        if: matrix.os != 'ubuntu-latest'
         run: |
           pytest tests/
