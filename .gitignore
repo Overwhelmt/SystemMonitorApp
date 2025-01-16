@@ -1,0 +1,13 @@
+.vscode/
+*.code-workspace
+
+*.sublime-workspace
+*.sublime-project
+
+venv
+
+test_results/
+*.log
+
+*.db
+*.sqlite3
